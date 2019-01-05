@@ -1,0 +1,16 @@
+
+
+<section class="ucl-select" [id]="'ucl-' + id" >
+    <div class="ucl-select-div" [id]="'ucl-div-'+id" 
+        (click)="this.toggleSelect($event)" 
+        role="listbox" aria-haspopup="listbox" aria-expanded="true" >
+        <span [ngClass]="'ucl-select-image'+ (selectOpen?'-open':'')"></span>
+    </div>
+    <ul [hidden]="!selectOpen">
+        <li *ngFor="let  option of options">
+            <div (click)="this.selectOption(option)">
+                {{option.description}}
+            </div>
+        </li>
+    </ul>
+</section>
